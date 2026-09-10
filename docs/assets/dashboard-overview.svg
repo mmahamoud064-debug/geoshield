@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="860" viewBox="0 0 1440 860">
+<rect width="1440" height="860" fill="#071019"/>
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#102331"/><stop offset="1" stop-color="#0a1722"/></linearGradient></defs>
+<text x="54" y="64" fill="#eef7fb" font-family="Segoe UI,Arial" font-size="30" font-weight="700">GeoShield</text>
+<rect x="202" y="38" width="72" height="30" rx="15" fill="#10392f"/><text x="222" y="59" fill="#5ee2ba" font-family="Arial" font-size="13" font-weight="700">● LIVE</text>
+<text x="54" y="91" fill="#8ca5b7" font-family="Arial" font-size="15">Explainable IP threat intelligence</text>
+<rect x="1180" y="38" width="96" height="44" rx="12" fill="#102331" stroke="#263b49"/><text x="1201" y="66" fill="#eef7fb" font-family="Arial" font-size="16" font-weight="700">Refresh</text>
+<rect x="1289" y="38" width="110" height="44" rx="12" fill="#5ee2ba"/><text x="1312" y="66" fill="#06251d" font-family="Arial" font-size="16" font-weight="700">Run Demo</text>
+
+<rect x="38" y="130" width="740" height="230" rx="18" fill="url(#g)" stroke="#263b49"/>
+<text x="62" y="169" fill="#70a4bf" font-family="Arial" font-size="12" font-weight="700" letter-spacing="2">SECURITY OPERATIONS</text>
+<text x="62" y="222" fill="#eef7fb" font-family="Arial" font-size="42" font-weight="800">See risky traffic before it</text>
+<text x="62" y="270" fill="#eef7fb" font-family="Arial" font-size="42" font-weight="800">becomes an incident.</text>
+<text x="62" y="312" fill="#8ca5b7" font-family="Arial" font-size="18">IP2Location context + behavioral rules + readable explanations.</text>
+
+<g font-family="Arial">
+<rect x="798" y="130" width="286" height="108" rx="16" fill="#102331" stroke="#263b49"/><text x="820" y="160" fill="#8ca5b7" font-size="14">Total events</text><text x="820" y="209" fill="#eef7fb" font-size="38" font-weight="800">12</text>
+<rect x="1100" y="130" width="300" height="108" rx="16" fill="#102331" stroke="#263b49"/><text x="1122" y="160" fill="#8ca5b7" font-size="14">Unique IPs</text><text x="1122" y="209" fill="#eef7fb" font-size="38" font-weight="800">3</text>
+<rect x="798" y="252" width="286" height="108" rx="16" fill="#102331" stroke="#263b49"/><text x="820" y="282" fill="#8ca5b7" font-size="14">Risky events</text><text x="820" y="331" fill="#f0c36a" font-size="38" font-weight="800">6</text>
+<rect x="1100" y="252" width="300" height="108" rx="16" fill="#102331" stroke="#263b49"/><text x="1122" y="282" fill="#8ca5b7" font-size="14">Active alerts</text><text x="1122" y="331" fill="#ff7d86" font-size="38" font-weight="800">6</text>
+</g>
+
+<rect x="38" y="380" width="1362" height="104" rx="16" fill="url(#g)" stroke="#263b49"/>
+<text x="62" y="409" fill="#70a4bf" font-family="Arial" font-size="11" font-weight="700" letter-spacing="2">HOW GEOSHIELD WORKS</text>
+<g font-family="Arial" font-weight="700">
+<text x="92" y="454" fill="#eef7fb" font-size="17">01  Ingest</text><text x="323" y="454" fill="#5ee2ba" font-size="19">→</text>
+<text x="380" y="454" fill="#eef7fb" font-size="17">02  Enrich</text><text x="618" y="454" fill="#5ee2ba" font-size="19">→</text>
+<text x="678" y="454" fill="#eef7fb" font-size="17">03  Score</text><text x="907" y="454" fill="#5ee2ba" font-size="19">→</text>
+<text x="970" y="454" fill="#eef7fb" font-size="17">04  Explain</text>
+</g>
+<rect x="1171" y="416" width="198" height="35" rx="18" fill="#10392f"/><text x="1190" y="439" fill="#5ee2ba" font-family="Arial" font-size="12">IP2Location.io intelligence</text>
+
+<rect x="38" y="504" width="860" height="316" rx="18" fill="url(#g)" stroke="#263b49"/>
+<text x="62" y="540" fill="#70a4bf" font-family="Arial" font-size="11" font-weight="700" letter-spacing="2">GLOBAL SIGNALS</text>
+<text x="62" y="570" fill="#eef7fb" font-family="Arial" font-size="22" font-weight="700">Threat activity</text>
+<rect x="62" y="594" width="812" height="196" rx="13" fill="#08151f"/>
+<path d="M110 660L180 620L250 638L300 626L345 655L308 690L250 700L210 730L160 705Z" fill="#173144" stroke="#355166"/>
+<path d="M430 640L500 612L590 630L650 620L740 650L812 688L750 720L660 700L590 730L520 694L470 700Z" fill="#173144" stroke="#355166"/>
+<circle cx="216" cy="665" r="16" fill="#ff7d86"/><text x="239" y="670" fill="#eef7fb" font-family="Arial" font-size="13" font-weight="700">US 5</text>
+<circle cx="512" cy="646" r="12" fill="#ff7d86"/><text x="532" y="651" fill="#eef7fb" font-family="Arial" font-size="13" font-weight="700">DE 4</text>
+<circle cx="770" cy="733" r="11" fill="#5ee2ba"/><text x="789" y="738" fill="#eef7fb" font-family="Arial" font-size="13" font-weight="700">AU 3</text>
+
+<rect x="916" y="504" width="484" height="316" rx="18" fill="url(#g)" stroke="#263b49"/>
+<text x="940" y="540" fill="#70a4bf" font-family="Arial" font-size="11" font-weight="700" letter-spacing="2">EXPLAINABLE DETECTIONS</text>
+<text x="940" y="570" fill="#eef7fb" font-family="Arial" font-size="22" font-weight="700">Recent alerts</text>
+<rect x="940" y="595" width="436" height="90" rx="12" fill="#102331" stroke="#263b49"/>
+<text x="960" y="620" fill="#eef7fb" font-family="monospace" font-size="14" font-weight="700">198.51.100.20</text><text x="1295" y="620" fill="#f0c36a" font-family="Arial" font-size="12" font-weight="700">HIGH</text>
+<text x="960" y="656" fill="#ff7d86" font-family="Arial" font-size="28" font-weight="800">70</text><text x="1002" y="654" fill="#8ca5b7" font-family="Arial" font-size="12">/100 risk</text>
+<rect x="940" y="700" width="436" height="90" rx="12" fill="#102331" stroke="#263b49"/>
+<text x="960" y="727" fill="#eef7fb" font-family="monospace" font-size="14" font-weight="700">203.0.113.30</text><text x="1280" y="727" fill="#f0c36a" font-family="Arial" font-size="12" font-weight="700">MEDIUM</text>
+<text x="960" y="765" fill="#f0c36a" font-family="Arial" font-size="28" font-weight="800">40</text><text x="1002" y="763" fill="#8ca5b7" font-family="Arial" font-size="12">/100 risk</text>
+</svg>
