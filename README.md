@@ -6,7 +6,7 @@ GeoShield turns ordinary web access events into geographic and behavioral securi
 
 Built for the **IP2Location Programming Contest 2026**.
 
-![GeoShield dashboard](docs/assets/dashboard-overview.png)
+![GeoShield dashboard](docs/assets/dashboard-overview.svg)
 
 ## Why GeoShield
 
@@ -175,7 +175,7 @@ backend/demo/attack.nginx.log
 
 You can also download it directly from the dashboard using **Sample attack log**, then feed it back into **Upload Nginx log**.
 
-![GeoShield request stream](docs/assets/request-stream.png)
+![GeoShield request stream](docs/assets/request-stream.svg)
 
 ## Tests
 
