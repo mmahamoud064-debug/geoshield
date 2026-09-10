@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="480" viewBox="0 0 1440 480">
+<rect width="1440" height="480" fill="#071019"/>
+<rect x="24" y="24" width="1392" height="432" rx="18" fill="#102331" stroke="#263b49"/>
+<text x="50" y="62" fill="#70a4bf" font-family="Arial" font-size="11" font-weight="700" letter-spacing="2">REQUEST STREAM</text>
+<text x="50" y="96" fill="#eef7fb" font-family="Arial" font-size="23" font-weight="700">Recent events</text>
+<g font-family="Arial" font-size="11" fill="#70a4bf" font-weight="700">
+<text x="58" y="142">TIME</text><text x="240" y="142">SOURCE</text><text x="515" y="142">REQUEST</text><text x="840" y="142">STATUS</text><text x="1000" y="142">COUNTRY</text><text x="1140" y="142">ASN</text><text x="1300" y="142">RISK</text>
+</g>
+<g stroke="#263b49" stroke-width="1"><line x1="48" y1="156" x2="1390" y2="156"/><line x1="48" y1="212" x2="1390" y2="212"/><line x1="48" y1="268" x2="1390" y2="268"/><line x1="48" y1="324" x2="1390" y2="324"/><line x1="48" y1="380" x2="1390" y2="380"/></g>
+<g font-family="Arial" font-size="13" fill="#dcebf2">
+<text x="58" y="190">12:00:10</text><text x="240" y="190">198.51.100.20</text><text x="515" y="190" font-family="monospace">POST /admin/login</text><text x="840" y="190" fill="#ff7d86">401</text><text x="1000" y="190">US</text><text x="1140" y="190">15169</text><text x="1310" y="190" fill="#ff7d86" font-weight="700">70</text>
+<text x="58" y="246">12:00:09</text><text x="240" y="246">198.51.100.20</text><text x="515" y="246" font-family="monospace">POST /admin/login</text><text x="840" y="246" fill="#ff7d86">401</text><text x="1000" y="246">US</text><text x="1140" y="246">15169</text><text x="1310" y="246" fill="#ff7d86" font-weight="700">50</text>
+<text x="58" y="302">12:00:16</text><text x="240" y="302">203.0.113.30</text><text x="515" y="302" font-family="monospace">GET /.git/config</text><text x="840" y="302" fill="#ff7d86">404</text><text x="1000" y="302">DE</text><text x="1140" y="302">19281</text><text x="1310" y="302" fill="#f0c36a" font-weight="700">40</text>
+<text x="58" y="358">12:00:04</text><text x="240" y="358">192.0.2.10</text><text x="515" y="358" font-family="monospace">GET /docs</text><text x="840" y="358" fill="#5ee2ba">200</text><text x="1000" y="358">AU</text><text x="1140" y="358">13335</text><text x="1310" y="358" fill="#5ee2ba" font-weight="700">0</text>
+</g>
+<g font-family="Arial" font-size="10" font-weight="700">
+<rect x="360" y="172" width="72" height="22" rx="6" fill="#3d3925"/><text x="371" y="187" fill="#f0c36a">SYNTHETIC</text>
+<rect x="360" y="228" width="72" height="22" rx="6" fill="#3d3925"/><text x="371" y="243" fill="#f0c36a">SYNTHETIC</text>
+<rect x="360" y="284" width="72" height="22" rx="6" fill="#3d3925"/><text x="371" y="299" fill="#f0c36a">SYNTHETIC</text>
+<rect x="360" y="340" width="72" height="22" rx="6" fill="#3d3925"/><text x="371" y="355" fill="#f0c36a">SYNTHETIC</text>
+</g>
+</svg>
