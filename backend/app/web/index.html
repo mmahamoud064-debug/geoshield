@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GeoShield — explainable IP threat intelligence powered by IP2Location." />
+  <title>GeoShield — IP Threat Intelligence</title>
+  <link rel="stylesheet" href="/static/dashboard.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-group">
+        <div class="shield-mark" aria-hidden="true">G</div>
+        <div>
+          <div class="brand-row">
+            <h1>GeoShield</h1>
+            <span class="status-pill"><span class="status-dot"></span>LIVE</span>
+          </div>
+          <p>Explainable IP threat intelligence</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="button secondary" id="refreshButton" type="button">Refresh</button>
+        <button class="button primary" id="demoButton" type="button">Run Demo</button>
+      </div>
+    </header>
+    <main>
+      <section class="hero-grid" aria-label="GeoShield overview">
+        <article class="hero-copy panel">
+          <div>
+            <span class="eyebrow">SECURITY OPERATIONS</span>
+            <h2>See risky traffic before it becomes an incident.</h2>
+            <p>GeoShield enriches IP activity, scores suspicious behavior, and explains exactly why each alert was raised.</p>
+          </div>
+          <div class="hero-footer">
+            <span class="synthetic-note"><span></span> Demo data is clearly marked synthetic</span>
+            <a href="/docs" target="_blank" rel="noreferrer">Open API docs ↗</a>
+          </div>
+        </article>
+        <section class="metric-grid" id="metrics" aria-live="polite">
+          <article class="metric-card"><span>Total events</span><strong id="totalEvents">—</strong><small>Observed requests</small></article>
+          <article class="metric-card"><span>Unique IPs</span><strong id="uniqueIps">—</strong><small>Distinct sources</small></article>
+          <article class="metric-card risk-card"><span>Risky events</span><strong id="riskyEvents">—</strong><small>Score ≥ 30</small></article>
+          <article class="metric-card alert-card"><span>Active alerts</span><strong id="activeAlerts">—</strong><small>Explainable detections</small></article>
+        </section>
+      </section>
+
+      <section class="panel pipeline-panel" aria-label="How GeoShield works">
+        <div class="pipeline-heading">
+          <div><span class="eyebrow">HOW GEOSHIELD WORKS</span><h3>From request to explainable alert</h3></div>
+          <span class="provider-pill">Real IP intelligence via IP2Location.io</span>
+        </div>
+        <div class="pipeline-steps">
+          <div class="pipeline-step"><span class="pipeline-index">01</span><div><strong>Ingest</strong><small>JSON events or Nginx logs</small></div></div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-step"><span class="pipeline-index">02</span><div><strong>Enrich</strong><small>Geo, ASN, ISP &amp; proxy context</small></div></div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-step"><span class="pipeline-index">03</span><div><strong>Score</strong><small>Behavioral + network risk rules</small></div></div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-step"><span class="pipeline-index">04</span><div><strong>Explain</strong><small>Readable reasons and incident timeline</small></div></div>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel map-panel">
+          <div class="panel-heading">
+            <div><span class="eyebrow">GLOBAL SIGNALS</span><h3>Threat activity</h3></div>
+            <span class="panel-meta" id="mapMeta">Waiting for data</span>
+          </div>
+          <div class="map-wrap">
+            <svg id="activityMap" viewBox="0 0 960 480" role="img" aria-label="Global geographic threat activity">
+              <g class="map-grid-lines">
+                <line x1="0" y1="120" x2="960" y2="120"></line><line x1="0" y1="240" x2="960" y2="240"></line><line x1="0" y1="360" x2="960" y2="360"></line>
+                <line x1="240" y1="0" x2="240" y2="480"></line><line x1="480" y1="0" x2="480" y2="480"></line><line x1="720" y1="0" x2="720" y2="480"></line>
+              </g>
+              <g class="world-silhouette">
+                <path d="M74 145 L120 103 L184 91 L226 110 L269 105 L307 126 L285 153 L245 162 L227 192 L199 183 L177 211 L144 190 L116 193 L89 171 Z"></path>
+                <path d="M242 220 L280 233 L305 271 L297 320 L278 363 L254 409 L232 381 L218 329 L220 278 Z"></path>
+                <path d="M423 118 L465 93 L522 99 L548 125 L582 119 L628 135 L674 127 L720 146 L780 145 L846 174 L873 204 L829 219 L780 204 L739 223 L702 205 L655 213 L614 195 L576 204 L547 184 L513 188 L489 163 L456 169 L431 151 Z"></path>
+                <path d="M490 220 L535 225 L570 253 L582 306 L559 359 L526 403 L493 374 L474 322 L464 268 Z"></path>
+                <path d="M793 340 L827 323 L867 335 L887 366 L867 395 L823 397 L797 371 Z"></path>
+                <path d="M365 104 L383 82 L406 87 L413 108 L392 123 Z"></path>
+              </g>
+              <g id="activityPoints"></g>
+            </svg>
+            <div class="map-empty" id="mapEmpty">Run the demo to populate global activity.</div>
+          </div>
+          <div class="map-legend">
+            <span><i class="legend-dot low"></i> Normal / low risk</span>
+            <span><i class="legend-dot high"></i> Risky activity</span>
+            <span>Bubble size = event volume</span>
+          </div>
+        </article>
+
+        <article class="panel alerts-panel">
+          <div class="panel-heading">
+            <div><span class="eyebrow">EXPLAINABLE DETECTIONS</span><h3>Recent alerts</h3></div>
+            <span class="panel-meta" id="alertMeta">0 alerts</span>
+          </div>
+          <div id="alertsList" class="alerts-list"><div class="empty-state">No alerts yet. Run the demo or ingest traffic.</div></div>
+        </article>
+      </section>
+
+      <section class="panel events-panel">
+        <div class="panel-heading events-heading">
+          <div><span class="eyebrow">REQUEST STREAM</span><h3>Recent events</h3></div>
+          <div class="upload-actions">
+            <a class="file-button sample-log-link" href="/api/demo/sample-log" download>Sample attack log</a>
+            <label class="file-button" for="logFile">Upload Nginx log</label>
+            <input id="logFile" type="file" accept=".log,.txt,text/plain" />
+            <span class="panel-meta" id="eventMeta">0 events</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Time</th><th>Source</th><th>Request</th><th>Status</th><th>Country</th><th>ASN</th><th>Risk</th></tr></thead>
+            <tbody id="eventsTable"><tr><td colspan="7" class="table-empty">No events yet.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop" id="incidentBackdrop" hidden></div>
+  <aside class="incident-drawer" id="incidentDrawer" aria-hidden="true" aria-labelledby="incidentTitle">
+    <div class="incident-header">
+      <div><span class="eyebrow">INCIDENT DETAILS</span><h3 id="incidentTitle">Threat investigation</h3></div>
+      <button class="icon-button" id="incidentClose" type="button" aria-label="Close incident details">×</button>
+    </div>
+    <div class="incident-scroll">
+      <section class="incident-score-card">
+        <div><span class="incident-ip" id="incidentIp">—</span><span class="severity medium" id="incidentSeverity">—</span></div>
+        <div class="incident-score"><strong id="incidentScore">0</strong><span>/ 100 risk</span></div>
+        <p id="incidentExplanation">Select an alert to investigate its signals.</p>
+      </section>
+      <section class="incident-section">
+        <div class="incident-section-title">Request</div>
+        <div class="incident-request" id="incidentRequest">—</div>
+        <div class="incident-meta-grid">
+          <div><span>Status</span><strong id="incidentStatus">—</strong></div>
+          <div><span>Observed</span><strong id="incidentObserved">—</strong></div>
+          <div><span>Data</span><strong id="incidentDataType">—</strong></div>
+          <div><span>Enrichment</span><strong id="incidentEnrichment">—</strong></div>
+        </div>
+      </section>
+      <section class="incident-section">
+        <div class="incident-section-title">Network intelligence</div>
+        <div class="incident-meta-grid">
+          <div><span>Location</span><strong id="incidentLocation">—</strong></div>
+          <div><span>ASN</span><strong id="incidentAsn">—</strong></div>
+          <div><span>ISP</span><strong id="incidentIsp">—</strong></div>
+          <div><span>Proxy</span><strong id="incidentProxy">—</strong></div>
+        </div>
+      </section>
+      <section class="incident-section"><div class="incident-section-title">Why it was flagged</div><div class="incident-reasons" id="incidentReasons"></div></section>
+      <section class="incident-section"><div class="incident-section-title">Activity timeline</div><div class="incident-timeline" id="incidentTimeline"></div></section>
+    </div>
+  </aside>
+  <script src="/static/dashboard.js" defer></script>
+</body>
+</html>
