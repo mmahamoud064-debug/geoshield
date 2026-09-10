@@ -1,5 +1,7 @@
 # GeoShield
 
+[![GeoShield Tests](https://github.com/mmahamoud064-debug/geoshield/actions/workflows/tests.yml/badge.svg)](https://github.com/mmahamoud064-debug/geoshield/actions/workflows/tests.yml)
+
 **Explainable IP threat intelligence for web traffic — powered by IP2Location.io.**
 
 GeoShield turns ordinary web access events into geographic and behavioral security signals. It ingests JSON events or Nginx logs, enriches public IP addresses with IP2Location intelligence, scores suspicious behavior with readable rules, and gives the analyst a dashboard with global activity, alerts, and incident timelines.
